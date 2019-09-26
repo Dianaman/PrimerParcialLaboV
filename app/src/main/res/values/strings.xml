@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PrimerParcialLaboV</string>
+    <string name="quantity">Quantity:</string>
+    <string name="price">Unity price:</string>
+    <string name="name">Product name</string>
+    <string name="edit">Edit</string>
+</resources>
