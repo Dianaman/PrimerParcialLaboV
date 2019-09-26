@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void editarProducto(){
-        Intent i = new Intent();
+        Log.d("Editar", "Editar");
 
+        Intent i = new Intent();
+        startActivityForResult(i, 1);
     }
 }

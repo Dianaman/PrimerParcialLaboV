@@ -18,9 +18,10 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
 
+        this.a = (MainActivity) itemView.getContext();
         this.itemView = itemView;
 
-        MyListener myListener = new MyListener();
+        MyListener myListener = new MyListener(a);
         itemView.setOnClickListener(myListener);
     }
 
