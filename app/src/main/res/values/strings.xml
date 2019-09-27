@@ -4,4 +4,5 @@
     <string name="price">Unity price:</string>
     <string name="name">Product name</string>
     <string name="edit">Edit</string>
+    <string name="edit_title">Edit product</string>
 </resources>

@@ -15,6 +15,6 @@ public class MyListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        this.a.editarProducto();
+        this.a.editarProducto(holder.position);
     }
 }
