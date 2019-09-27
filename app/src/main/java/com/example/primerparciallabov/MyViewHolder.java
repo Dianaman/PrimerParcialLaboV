@@ -8,33 +8,28 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 public class MyViewHolder extends RecyclerView.ViewHolder {
     View itemView;
     int position;
-    MainActivity a;
+    TextView tvNombre;
+    TextView tvCantidad;
+    TextView tvPrecio;
 
-    public MyViewHolder(@NonNull View itemView) {
+    public MyViewHolder(@NonNull View itemView, MainActivity a) {
         super(itemView);
 
-        this.a = (MainActivity) itemView.getContext();
         this.itemView = itemView;
 
-        MyListener myListener = new MyListener(a);
+        MyListener myListener = new MyListener(this, a);
         itemView.setOnClickListener(myListener);
-    }
 
-    public void onBind(List<Producto> productos){
-
-        TextView tvNombre = (TextView) itemView.findViewById(R.id.nombreProducto);
-        tvNombre.setText(productos.get(position).nombre);
-
-        TextView tvCantidad = itemView.findViewById(R.id.qty);
-        tvCantidad.setText(productos.get(position).cantidad + "");
-
-        TextView tvPrecio = itemView.findViewById(R.id.price);
-        tvPrecio.setText(productos.get(position).precio + "");
+        this.tvNombre = (TextView) itemView.findViewById(R.id.nombreProducto);
+        this.tvCantidad = itemView.findViewById(R.id.qty);
+        this.tvPrecio = itemView.findViewById(R.id.price);
     }
 
 }

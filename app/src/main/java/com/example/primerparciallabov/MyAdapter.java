@@ -12,8 +12,10 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     List<Producto> productos;
+    MainActivity ac;
 
-    public MyAdapter(List<Producto> productos){
+    public MyAdapter(List<Producto> productos, MainActivity ac){
+        this.ac = ac;
         this.productos = productos;
     }
 
@@ -22,16 +24,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d("On create", "On create");
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.producto,parent,false);
-        MyViewHolder myViewHolder = new MyViewHolder(v);
+        MyViewHolder myViewHolder = new MyViewHolder(v, this.ac);
 
         return myViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Log.d("On bind", "On bind");
         holder.position = position;
-        holder.onBind(this.productos);
+
+        holder.tvNombre.setText(productos.get(position).nombre);
+        holder.tvCantidad.setText(productos.get(position).cantidad + "");
+        holder.tvPrecio.setText(productos.get(position).precio + "");
     }
 
     @Override

@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.primerparciallabov.Edit.EditActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         RecyclerView rv = (RecyclerView) this.findViewById(R.id.rv);
-        MyAdapter adapter = new MyAdapter(this.productos);
+        MyAdapter adapter = new MyAdapter(this.productos, this);
         rv.setAdapter(adapter);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     public void editarProducto(){
         Log.d("Editar", "Editar");
 
-        Intent i = new Intent();
+        Intent i = new Intent(this, EditActivity.class);
         startActivityForResult(i, 1);
     }
 }

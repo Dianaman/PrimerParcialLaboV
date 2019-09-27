@@ -2,15 +2,19 @@ package com.example.primerparciallabov;
 
 import android.view.View;
 
-public class MyListener implements View.OnClickListener {
-    MainActivity context;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public MyListener(MainActivity context){
-        this.context = context;
+public class MyListener implements View.OnClickListener {
+    MainActivity a;
+    MyViewHolder holder;
+
+    public MyListener(MyViewHolder holder, MainActivity a){
+        this.holder = holder;
+        this.a = a;
     }
 
     @Override
     public void onClick(View view) {
-        context.editarProducto();
+        this.a.editarProducto();
     }
 }
