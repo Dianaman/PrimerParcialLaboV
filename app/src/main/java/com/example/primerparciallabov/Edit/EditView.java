@@ -2,6 +2,7 @@ package com.example.primerparciallabov.Edit;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.primerparciallabov.R;
 
@@ -10,7 +11,7 @@ public class EditView {
     EditController controller;
     EditActivity activity;
     EditText nombre;
-    EditText cantidad;
+    TextView cantidad;
     EditText precio;
 
     public EditView(EditModel model, EditListener listener, EditActivity a, EditController controller){

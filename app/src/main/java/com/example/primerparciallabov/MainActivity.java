@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.primerparciallabov.Edit.EditActivity;
 
@@ -77,5 +78,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+    }
+
+    public void controlStock(int position, String action){
+        Producto p = this.productos.get(position);
+        int cantidad = p.cantidad;
+
+        if(action == "minus" && cantidad > 0){
+            cantidad--;
+        } else if(action == "plus"){
+            cantidad ++;
+        }
+
+        p.cantidad = cantidad;
+        this.productos.set(position, p);
+
+        this.adapter.notifyItemChanged(position);
     }
 }

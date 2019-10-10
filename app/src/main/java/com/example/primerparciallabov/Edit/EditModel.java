@@ -10,7 +10,7 @@ public class EditModel {
     }
 
     public void setProducto(String nombre, int cantidad, float precio){
-        this.producto = new Producto(nombre, cantidad,precio);
+        this.producto = new Producto(nombre, cantidad, precio);
     }
 
     public Producto getProducto(){
